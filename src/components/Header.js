@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header>
       <nav className="header-nav">
-        <ul className="header-ul">
+        <ul className="flex  justify-between ">
           <li>
             <h2
               className="header-h2"
@@ -14,7 +14,7 @@ const Header = () => {
               Redux Shopping App
             </h2>
           </li>
-          <li>
+          <li className="">
             <Cart />
           </li>
         </ul>
