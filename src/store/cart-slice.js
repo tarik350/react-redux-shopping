@@ -31,10 +31,27 @@ const cartSlice = createSlice({
       }
     },
     removeFromCart: (state, action) => {
-      console.log("remove from cart ");
+      const id = action.payload;
+      state.totalQuantity--;
+
+      const existingItem = state.itemList.find((item) => item.id === id);
+
+      if (existingItem.quantity === 1) {
+        //grap everyting in item list except the one that matches its id with the previded id
+        state.itemList = state.itemList.filter((item) => item.id !== id);
+      } else {
+        existingItem.quantity--;
+        existingItem.totalPrice -= existingItem.price;
+      }
+      console.log("removed successfully ");
     },
     setShowCart: (state, action) => {
-      console.log("add to cart");
+      if (state.showCart === false) {
+        state.showCart = true;
+      } else {
+        state.showCart = false;
+      }
+      console.log(`show cart: ${state.showCart}`);
     },
   },
 });
