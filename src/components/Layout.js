@@ -4,10 +4,16 @@ import Products from "./Products";
 import "./Layout.css";
 import CartItems from "./CartItems";
 import { useSelector } from "react-redux";
+
+/// i have to read alot about redux
+/// i have to read alot about hooks
+/// i have to make alots of products
+
 const Layout = () => {
   const showItems = useSelector((state) => state.cart.showCart);
   const cartList = useSelector((state) => state.cart.itemList);
 
+  //it is this much easy to make an e-commerce site : it is really amazing
   console.log(`show items from layout: ${showItems}`);
   let total = 0;
 
